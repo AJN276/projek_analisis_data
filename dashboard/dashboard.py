@@ -10,7 +10,7 @@ df = pd.read_csv('dashboard/main_data.csv')
 df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
 
 
-# Dashboard Title
+# Title
 st.title('Dashboard Analisis Data Pesanan')
 
 # Sidebar Filters
@@ -24,11 +24,9 @@ date_range = st.sidebar.date_input(
     value=[min_date, max_date]
     )
 
-
-# Apply filters
 df_filtered = df[df['order_purchase_timestamp'].between(pd.to_datetime(date_range[0]), pd.to_datetime(date_range[1]))]
 
-# Tabs
+# Tab
 tab1, tab2, tab3 = st.tabs(['Pesanan', 'Analisis', 'Lokasi'])
 
 with tab1:
