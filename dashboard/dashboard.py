@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 sns.set(style='dark')
 
-df = pd.read_csv('..\main_data.csv')
+df = pd.read_csv('./main_data.csv')
 
 df['order_purchase_timestamp'] = pd.to_datetime(df['order_purchase_timestamp'])
 
